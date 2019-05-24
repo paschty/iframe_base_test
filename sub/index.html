@@ -9,8 +9,10 @@
             iframe.onload = function(){
               console.log("IT WORKED!!");
             };
-            iframe.srcdoc="<html lang='en'><head><meta charset='UTF-8'><title>Title</title><base href='newBase/'></head><body><img src='img.gif' /></body></html>";
             document.body.appendChild(iframe);
+            iframe.contentDocument.open();
+            iframe.contentDocument.write("<html lang='en'><head><meta charset='UTF-8'><title>Title</title><base href='newBase/'></head><body><img src='img.gif' /></body></html>");
+            iframe.contentDocument.close();
         };
     </script>
 </head>
